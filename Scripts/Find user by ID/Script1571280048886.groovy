@@ -8,7 +8,8 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
-import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.webservice.common.WebServiceMethod
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
@@ -16,6 +17,8 @@ import groovy.json.JsonSlurper as JsonSlurper
 import com.kms.katalon.core.testobject.RequestObject as RequestObject
 import static org.assertj.core.api.Assertions.*
 
-int id = CustomKeywords.'sample.Common.createNewUser'(age as Integer, username, password, gender, 200)
+//int id = CustomKeywords.'sample.Common.createNewUser'(age as Integer, username, password, gender, 200)
 
-CustomKeywords.'sample.Common.findUserById'(id, age as Integer, username, password, gender, 200)
+//CustomKeywords.'sample.Common.findUserById'(id, age as Integer, username, password, gender, 200)
+
+WS.sendRequest(findTestObject('Object Repository/GET user by id'))
